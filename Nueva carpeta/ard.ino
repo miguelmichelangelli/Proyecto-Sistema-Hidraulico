@@ -5,7 +5,7 @@ const int echoPin = 18; // Pin de Echo
 // Variables para almacenar la distancia y el tiempo
 long duration;
 int distance;
-int[] leds = {15,2,4,21,22,23};
+int leds[] = {15,2,4,21,22,23};
 
 void setup() {
   // Inicializar la comunicación serial
@@ -17,7 +17,7 @@ void setup() {
 
   // Configurar los pines de los LEDs como salidas
   for (int k = 0; k <= 5; k++) {
-    pinMode(leds[i], OUTPUT);
+    pinMode(leds[k], OUTPUT);
   }
 
   // Configurando la salida de la señal enviada a la bomba
@@ -78,7 +78,7 @@ void medirNivelAgua() {
         digitalWrite(leds[i], HIGH);
     }
 
-    for(int i = 3, i <= 5; i++) {
+    for(int i = 3; i <= 5; i++) {
         digitalWrite(leds[i], LOW);
     }
     
